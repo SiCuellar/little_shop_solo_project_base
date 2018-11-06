@@ -1,3 +1,5 @@
+require 'CSV'
+
 class User < ApplicationRecord
   has_secure_password
 
