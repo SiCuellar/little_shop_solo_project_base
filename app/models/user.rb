@@ -162,6 +162,7 @@ class User < ApplicationRecord
     .where('users.active = ?', true)
     .where.not('id = ?', id)
     .where.not(email: buyer_emails)
+    .order(:email)
     .pluck('users.email')
   end
 

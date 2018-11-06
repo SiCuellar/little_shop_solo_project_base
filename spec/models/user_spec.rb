@@ -302,6 +302,7 @@ RSpec.describe User, type: :model do
       user_1 = create(:user, city: 'Denver')
       user_2 = create(:user, city: 'Houston')
       user_3 = create(:user, city: 'Atlanta')
+      user_4 = create(:inactive_user, city: 'Dallas')
 
       merchant_1 = create(:merchant)
 
@@ -315,7 +316,6 @@ RSpec.describe User, type: :model do
       create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_1)
 
       expect(merchant_1.buyer_emails).to eq([user_1.email, user_2.email, user_3.email])
-
     end
 
     it '.nonbuyer_emails' do
@@ -323,6 +323,7 @@ RSpec.describe User, type: :model do
       user_2 = create(:user, city: 'Houston')
       user_3 = create(:user, city: 'Atlanta')
       user_4 = create(:user, city: 'Dallas')
+      user_5 = create(:inactive_user, city: 'Winterfell')
 
       merchant_1 = create(:merchant)
 
