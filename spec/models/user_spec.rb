@@ -302,24 +302,40 @@ RSpec.describe User, type: :model do
       user_1 = create(:user, city: 'Denver')
       user_2 = create(:user, city: 'Houston')
       user_3 = create(:user, city: 'Atlanta')
-      merchant_1, merchant_2 = create_list(:merchant, 2)
-      item_1 = create(:item, user: merchant_1)
-      item_2 = create(:item, user: merchant_2)
 
-      # user 1 is in 2nd place
+      merchant_1 = create(:merchant)
+
+      item_1 = create(:item, user: merchant_1)
+
       order_1 = create(:completed_order, user: user_1)
       create(:fulfilled_order_item, quantity: 100, price: 10, order: order_1, item: item_1)
-      create(:fulfilled_order_item, quantity: 100, price: 10, order: order_1, item: item_2)
-      # user 2 is 1st place
       order_2 = create(:completed_order, user: user_2)
       create(:fulfilled_order_item, quantity: 1000, price: 10, order: order_2, item: item_1)
-      create(:fulfilled_order_item, quantity: 1000, price: 10, order: order_2, item: item_2)
-      # user 3 in last place
       order_3 = create(:completed_order, user: user_3)
       create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_1)
-      create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_2)
 
       expect(merchant_1.buyer_emails).to eq([user_1.email, user_2.email, user_3.email])
+
+    end
+
+    it '.nonbuyer_emails' do
+      user_1 = create(:user, city: 'Denver')
+      user_2 = create(:user, city: 'Houston')
+      user_3 = create(:user, city: 'Atlanta')
+      user_4 = create(:user, city: 'Dallas')
+
+      merchant_1 = create(:merchant)
+
+      item_1 = create(:item, user: merchant_1)
+
+      order_1 = create(:completed_order, user: user_1)
+      create(:fulfilled_order_item, quantity: 100, price: 10, order: order_1, item: item_1)
+      order_2 = create(:completed_order, user: user_1)
+      create(:fulfilled_order_item, quantity: 1000, price: 10, order: order_2, item: item_1)
+      order_3 = create(:completed_order, user: user_2)
+      create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_1)
+
+      expect(merchant_1.nonbuyer_emails).to eq([user_3.email, user_4.email])
 
     end
   end
