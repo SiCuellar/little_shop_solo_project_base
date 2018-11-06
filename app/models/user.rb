@@ -152,6 +152,7 @@ class User < ApplicationRecord
     .where('order_items.fulfilled = ?', true)
     .where('items.user_id = ? AND users.active=?', id, true)
     .group(:id)
+    .order(:email)
     .pluck('users.email')
   end
 
@@ -162,6 +163,14 @@ class User < ApplicationRecord
     .where.not('id = ?', id)
     .where.not(email: buyer_emails)
     .pluck('users.email')
+  end
+
+  def self.to_csv
+   attributes =  %w{email}
+
+    CSV.generate(headers: true) do |csv|
+      csv << attributes.map{ |attr| user.send(attr) }
+    end
   end
 
 end

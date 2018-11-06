@@ -38,6 +38,7 @@ RSpec.describe 'Merchant Stats' do
       @order_A = create(:completed_order, user: @user_4)
       create(:fulfilled_order_item, order: @order_A, item: @item_1)
     end
+
     xit 'shows total items I have sold and as a percentage of inventory' do
       merchant_1, merchant_2 = create_list(:merchant, 2)
       total_units = 100
@@ -123,5 +124,19 @@ RSpec.describe 'Merchant Stats' do
         end
       end
     end
+
+    xit 'shows buttons to download csv files for buyers/nonbuyers emails' do
+      visit dashboard_path
+      within '#stats' do
+        within '#email-stats' do
+          expect(page).to have_selector(:link_or_button, "Download Buyers emails CSV")
+          expect(page).to have_selector(:link_or_button, "Download Non Buyer emails CSV")
+        end
+      end
+    end
   end
 end
+
+#  add the buttons to the user merchant show.html.erb
+# <%= link_to “Download Buyers emails CSV”, dashboard_path(format: “csv”, data: “customers”)%>
+# <%= link_to “Download Non Buyer emails CSV”, dashboard_path(format: “csv”, data: “noncustomers”)%>

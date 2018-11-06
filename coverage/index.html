@@ -14,27 +14,27 @@
       <img src="./assets/0.10.2/loading.gif" alt="loading"/>
     </div>
     <div id="wrapper" style="display:none;">
-      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-05T20:53:18-07:00">2018-11-05T20:53:18-07:00</abbr></div>
+      <div class="timestamp">Generated <abbr class="timeago" title="2018-11-05T22:01:39-07:00">2018-11-05T22:01:39-07:00</abbr></div>
       <ul class="group_tabs"></ul>
 
       <div id="content">
         <div class="file_list_container" id="AllFiles">
   <h2>
     <span class="group_name">All Files</span>
-    (<span class="covered_percent"><span class="green">99.27%</span></span>
+    (<span class="covered_percent"><span class="green">99.01%</span></span>
      covered at
      <span class="covered_strength">
        <span class="green">
-         3.03
+         3.02
        </span>
     </span> hits/line)
   </h2>
   <a name="AllFiles"></a>
   <div>
     <b>40</b> files in total.
-    <b>1908</b> relevant lines. 
-    <span class="green"><b>1894</b> lines covered</span> and
-    <span class="red"><b>14</b> lines missed </span>
+    <b>1914</b> relevant lines. 
+    <span class="green"><b>1895</b> lines covered</span> and
+    <span class="red"><b>19</b> lines missed </span>
   </div>
   <table class="file_list">
     <thead>
@@ -352,12 +352,12 @@
       
       <tr>
         <td class="strong"><a href="#8841a9c61776c4f10217d8083c28c388da3c58b7" class="src_link" title="spec/features/stats/merchant_spec.rb">spec/features/stats/merchant_spec.rb</a></td>
-        <td class="yellow strong">83.53 %</td>
-        <td>127</td>
-        <td>85</td>
-        <td>71</td>
-        <td>14</td>
-        <td>2.1</td>
+        <td class="red strong">79.12 %</td>
+        <td>142</td>
+        <td>91</td>
+        <td>72</td>
+        <td>19</td>
+        <td>2.0</td>
       </tr>
       
       <tr>
@@ -443,7 +443,7 @@
       <tr>
         <td class="strong"><a href="#cf8431c7e9b189a56aa0e8d4e5e15a4618d3a6a1" class="src_link" title="spec/models/user_spec.rb">spec/models/user_spec.rb</a></td>
         <td class="green strong">100.0 %</td>
-        <td>342</td>
+        <td>341</td>
         <td>251</td>
         <td>251</td>
         <td>0</td>
@@ -11221,11 +11221,11 @@
         <div class="source_table" id="8841a9c61776c4f10217d8083c28c388da3c58b7">
   <div class="header">
     <h3>spec/features/stats/merchant_spec.rb</h3>
-    <h4><span class="yellow">83.53 %</span> covered</h4>
+    <h4><span class="red">79.12 %</span> covered</h4>
     <div>
-      <b>85</b> relevant lines. 
-      <span class="green"><b>71</b> lines covered</span> and
-      <span class="red"><b>14</b> lines missed.</span>
+      <b>91</b> relevant lines. 
+      <span class="green"><b>72</b> lines covered</span> and
+      <span class="red"><b>19</b> lines missed.</span>
     </div>
   </div>
   
@@ -11472,526 +11472,616 @@
           <code class="ruby">    end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="41">
+        <li class="never" data-hits="" data-linenumber="41">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="42">
           <span class="hits">1</span>
           
           <code class="ruby">    xit &#39;shows total items I have sold and as a percentage of inventory&#39; do</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="42">
+        <li class="missed" data-hits="0" data-linenumber="43">
           
           
           <code class="ruby">      merchant_1, merchant_2 = create_list(:merchant, 2)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="43">
+        <li class="missed" data-hits="0" data-linenumber="44">
           
           
           <code class="ruby">      total_units = 100</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="44">
+        <li class="missed" data-hits="0" data-linenumber="45">
           
           
           <code class="ruby">      sold_units = 20</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="45">
+        <li class="missed" data-hits="0" data-linenumber="46">
           
           
           <code class="ruby">      item_1 = create(:item, inventory: total_units, user: merchant_1)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="46">
+        <li class="missed" data-hits="0" data-linenumber="47">
           
           
           <code class="ruby">      item_2 = create(:item, user: merchant_2)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="47">
+        <li class="missed" data-hits="0" data-linenumber="48">
           
           
           <code class="ruby">      order = create(:completed_order)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="48">
+        <li class="missed" data-hits="0" data-linenumber="49">
           
           
           <code class="ruby">      oi_1 = create(:fulfilled_order_item, quantity: sold_units, order: order, item: item_1)</code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="49">
+        <li class="missed" data-hits="0" data-linenumber="50">
           
           
           <code class="ruby">      oi_2 = create(:fulfilled_order_item, order: order, item: item_2)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="50">
+        <li class="never" data-hits="" data-linenumber="51">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="51">
+        <li class="missed" data-hits="0" data-linenumber="52">
           
           
           <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(merchant_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="52">
+        <li class="never" data-hits="" data-linenumber="53">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="missed" data-hits="0" data-linenumber="53">
+        <li class="missed" data-hits="0" data-linenumber="54">
           
           
           <code class="ruby">      visit dashboard_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="54">
+        <li class="never" data-hits="" data-linenumber="55">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="missed" data-hits="0" data-linenumber="55">
-          
-          
-          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="56">
           
           
-          <code class="ruby">        within &#39;#inv-stats&#39; do</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="57">
           
           
-          <code class="ruby">          expect(page).to have_content(&quot;Total Items Sold: #{sold_units}&quot;)</code>
+          <code class="ruby">        within &#39;#inv-stats&#39; do</code>
         </li>
       
         <li class="missed" data-hits="0" data-linenumber="58">
           
           
-          <code class="ruby">          expect(page).to have_content(&quot;Represents #{(sold_units/total_units*100).round(2)}% of Inventory&quot;)</code>
+          <code class="ruby">          expect(page).to have_content(&quot;Total Items Sold: #{sold_units}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="59">
+        <li class="missed" data-hits="0" data-linenumber="59">
           
           
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(page).to have_content(&quot;Represents #{(sold_units/total_units*100).round(2)}% of Inventory&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="60">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="61">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="62">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="62">
           
-          <code class="ruby">    it &#39;shows top 3 states where I have shipped items&#39; do</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="63">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &#39;shows top 3 states where I have shipped items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="64">
+          <span class="hits">1</span>
+          
           <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="64">
+        <li class="never" data-hits="" data-linenumber="65">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="65">
+        <li class="covered" data-hits="1" data-linenumber="66">
           <span class="hits">1</span>
           
           <code class="ruby">      visit dashboard_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="66">
+        <li class="never" data-hits="" data-linenumber="67">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="67">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="68">
           <span class="hits">1</span>
           
-          <code class="ruby">        within &#39;#stats-top-states&#39; do</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="69">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(page).to have_content(&quot;Top 3 States:\n#{@user_2.state} #{@user_1.state} #{@user_4.state}&quot;)</code>
+          <code class="ruby">        within &#39;#stats-top-states&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="70">
+        <li class="covered" data-hits="1" data-linenumber="70">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(page).to have_content(&quot;Top 3 States:\n#{@user_2.state} #{@user_1.state} #{@user_4.state}&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="71">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="72">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="73">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="73">
           
-          <code class="ruby">    it &#39;shows top 3 cities where I have shipped items&#39; do</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="74">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &#39;shows top 3 cities where I have shipped items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="75">
+          <span class="hits">1</span>
+          
           <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="75">
+        <li class="never" data-hits="" data-linenumber="76">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="76">
+        <li class="covered" data-hits="1" data-linenumber="77">
           <span class="hits">1</span>
           
           <code class="ruby">      visit dashboard_path</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="77">
+        <li class="never" data-hits="" data-linenumber="78">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="78">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="79">
           <span class="hits">1</span>
           
-          <code class="ruby">        within &#39;#stats-top-cities&#39; do</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="80">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(page).to have_content(&quot;Top 3 Cities:\n#{@user_2.city} #{@user_1.city} #{@user_4.city}&quot;)</code>
+          <code class="ruby">        within &#39;#stats-top-cities&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="81">
+        <li class="covered" data-hits="1" data-linenumber="81">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(page).to have_content(&quot;Top 3 Cities:\n#{@user_2.city} #{@user_1.city} #{@user_4.city}&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="82">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="83">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="84">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="84">
           
-          <code class="ruby">    it &#39;shows most active user buying my items&#39; do</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="85">
           <span class="hits">1</span>
           
-          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
+          <code class="ruby">    it &#39;shows most active user buying my items&#39; do</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="86">
+        <li class="covered" data-hits="1" data-linenumber="86">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby"></code>
+          <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="87">
           
           
-          <code class="ruby">      # user 2 is winning at first</code>
+          <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="88">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="88">
           
-          <code class="ruby">      visit dashboard_path</code>
+          
+          <code class="ruby">      # user 2 is winning at first</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="89">
           <span class="hits">1</span>
           
-          <code class="ruby">      within &#39;#stats&#39; do</code>
+          <code class="ruby">      visit dashboard_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="90">
           <span class="hits">1</span>
           
-          <code class="ruby">        active_user = @merchant_1.top_active_user</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="91">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_content(&quot;Most Active Buying User: #{@user_2.name}, #{active_user.order_count} orders&quot;)</code>
+          <code class="ruby">        active_user = @merchant_1.top_active_user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="92">
+        <li class="covered" data-hits="1" data-linenumber="92">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        expect(page).to have_content(&quot;Most Active Buying User: #{@user_2.name}, #{active_user.order_count} orders&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="93">
           
           
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="94">
+          
+          
           <code class="ruby">      # but if we disable this user, confirm user 1 is next best</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="94">
+        <li class="covered" data-hits="1" data-linenumber="95">
           <span class="hits">1</span>
           
           <code class="ruby">      @user_2.update(active: false)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="95">
+        <li class="never" data-hits="" data-linenumber="96">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="96">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      visit dashboard_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="97">
           <span class="hits">1</span>
           
-          <code class="ruby">      within &#39;#stats&#39; do</code>
+          <code class="ruby">      visit dashboard_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="98">
           <span class="hits">1</span>
           
-          <code class="ruby">        active_user = @merchant_1.top_active_user</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="99">
           <span class="hits">1</span>
           
-          <code class="ruby">        expect(page).to have_content(&quot;Most Active Buying User: #{@user_1.name}, #{active_user.order_count} orders&quot;)</code>
+          <code class="ruby">        active_user = @merchant_1.top_active_user</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="100">
+        <li class="covered" data-hits="1" data-linenumber="100">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">      end</code>
+          <code class="ruby">        expect(page).to have_content(&quot;Most Active Buying User: #{@user_1.name}, #{active_user.order_count} orders&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="101">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="102">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="102">
           
-          <code class="ruby">    it &#39;shows largest order by quantity of my items&#39; do</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="103">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &#39;shows largest order by quantity of my items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="104">
+          <span class="hits">1</span>
+          
           <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="104">
+        <li class="never" data-hits="" data-linenumber="105">
           
           
           <code class="ruby"></code>
-        </li>
-      
-        <li class="covered" data-hits="1" data-linenumber="105">
-          <span class="hits">1</span>
-          
-          <code class="ruby">      visit dashboard_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="106">
           <span class="hits">1</span>
           
-          <code class="ruby">      within &#39;#stats&#39; do</code>
+          <code class="ruby">      visit dashboard_path</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="107">
           <span class="hits">1</span>
           
-          <code class="ruby">        within &#39;#stats-biggest-order&#39; do</code>
+          <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="108">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(page).to have_content(&quot;Order ##{@order_A.id}, worth $#{@order_A.total}&quot;)</code>
+          <code class="ruby">        within &#39;#stats-biggest-order&#39; do</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="109">
           <span class="hits">1</span>
           
-          <code class="ruby">          expect(page).to have_content(&quot;It had #{@merchant_1.biggest_order.item_count} items of yours in the order&quot;)</code>
+          <code class="ruby">          expect(page).to have_content(&quot;Order ##{@order_A.id}, worth $#{@order_A.total}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="110">
+        <li class="covered" data-hits="1" data-linenumber="110">
+          <span class="hits">1</span>
           
-          
-          <code class="ruby">        end</code>
+          <code class="ruby">          expect(page).to have_content(&quot;It had #{@merchant_1.biggest_order.item_count} items of yours in the order&quot;)</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="111">
           
           
-          <code class="ruby">      end</code>
+          <code class="ruby">        end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="112">
           
           
-          <code class="ruby">    end</code>
+          <code class="ruby">      end</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="113">
-          <span class="hits">1</span>
+        <li class="never" data-hits="" data-linenumber="113">
           
-          <code class="ruby">    it &#39;shows top 3 spending users who bought my items&#39; do</code>
+          
+          <code class="ruby">    end</code>
         </li>
       
         <li class="covered" data-hits="1" data-linenumber="114">
           <span class="hits">1</span>
           
+          <code class="ruby">    it &#39;shows top 3 spending users who bought my items&#39; do</code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="115">
+          <span class="hits">1</span>
+          
           <code class="ruby">      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="115">
+        <li class="never" data-hits="" data-linenumber="116">
           
           
           <code class="ruby"></code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="116">
+        <li class="covered" data-hits="1" data-linenumber="117">
           <span class="hits">1</span>
           
           <code class="ruby">      visit dashboard_path</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="117">
+        <li class="covered" data-hits="1" data-linenumber="118">
           <span class="hits">1</span>
           
           <code class="ruby">      within &#39;#stats&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="118">
+        <li class="covered" data-hits="1" data-linenumber="119">
           <span class="hits">1</span>
           
           <code class="ruby">        within &#39;#stats-top-buyers&#39; do</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="119">
+        <li class="covered" data-hits="1" data-linenumber="120">
           <span class="hits">1</span>
           
           <code class="ruby">          buyers = @merchant_1.top_buyers(3)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="120">
+        <li class="covered" data-hits="1" data-linenumber="121">
           <span class="hits">1</span>
           
           <code class="ruby">          expect(page).to have_content(&quot;#{buyers[0].name}, $#{buyers[0].total_spent}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="121">
+        <li class="covered" data-hits="1" data-linenumber="122">
           <span class="hits">1</span>
           
           <code class="ruby">          expect(page).to have_content(&quot;#{buyers[1].name}, $#{buyers[1].total_spent}&quot;)</code>
         </li>
       
-        <li class="covered" data-hits="1" data-linenumber="122">
+        <li class="covered" data-hits="1" data-linenumber="123">
           <span class="hits">1</span>
           
           <code class="ruby">          expect(page).to have_content(&quot;#{buyers[2].name}, $#{buyers[2].total_spent}&quot;)</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="123">
+        <li class="never" data-hits="" data-linenumber="124">
           
           
           <code class="ruby">        end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="124">
+        <li class="never" data-hits="" data-linenumber="125">
           
           
           <code class="ruby">      end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="125">
+        <li class="never" data-hits="" data-linenumber="126">
           
           
           <code class="ruby">    end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="126">
+        <li class="never" data-hits="" data-linenumber="127">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="covered" data-hits="1" data-linenumber="128">
+          <span class="hits">1</span>
+          
+          <code class="ruby">    xit &#39;shows buttons to download csv files for buyers/nonbuyers emails&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="129">
+          
+          
+          <code class="ruby">      visit dashboard_path</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="130">
+          
+          
+          <code class="ruby">      within &#39;#stats&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="131">
+          
+          
+          <code class="ruby">        within &#39;#email-stats&#39; do</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="132">
+          
+          
+          <code class="ruby">          expect(page).to have_selector(:link_or_button, &quot;Download Buyers emails CSV&quot;)</code>
+        </li>
+      
+        <li class="missed" data-hits="0" data-linenumber="133">
+          
+          
+          <code class="ruby">          expect(page).to have_selector(:link_or_button, &quot;Download Non Buyer emails CSV&quot;)</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="134">
+          
+          
+          <code class="ruby">        end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="135">
+          
+          
+          <code class="ruby">      end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="136">
+          
+          
+          <code class="ruby">    end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="137">
           
           
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="127">
+        <li class="never" data-hits="" data-linenumber="138">
           
           
           <code class="ruby">end</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="139">
+          
+          
+          <code class="ruby"></code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="140">
+          
+          
+          <code class="ruby">#  add the buttons to the user merchant show.html.erb</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="141">
+          
+          
+          <code class="ruby"># &lt;%= link_to “Download Buyers emails CSV”, dashboard_path(format: “csv”, data: “customers”)%&gt;</code>
+        </li>
+      
+        <li class="never" data-hits="" data-linenumber="142">
+          
+          
+          <code class="ruby"># &lt;%= link_to “Download Non Buyer emails CSV”, dashboard_path(format: “csv”, data: “noncustomers”)%&gt;</code>
         </li>
       
     </ol>
@@ -18342,22 +18432,16 @@
         <li class="never" data-hits="" data-linenumber="339">
           
           
-          <code class="ruby"></code>
+          <code class="ruby">    end</code>
         </li>
       
         <li class="never" data-hits="" data-linenumber="340">
           
           
-          <code class="ruby">    end</code>
-        </li>
-      
-        <li class="never" data-hits="" data-linenumber="341">
-          
-          
           <code class="ruby">  end</code>
         </li>
       
-        <li class="never" data-hits="" data-linenumber="342">
+        <li class="never" data-hits="" data-linenumber="341">
           
           
           <code class="ruby">end</code>
