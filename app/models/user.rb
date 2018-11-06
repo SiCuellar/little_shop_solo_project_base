@@ -157,14 +157,11 @@ class User < ApplicationRecord
 
   def nonbuyer_emails
     User
-    .select('users.*, sum(order_items.quantity*order_items.price) as total_spent')
-    .joins(:orders)
-    .joins('join order_items on orders.id=order_items.order_id')
-    .joins('join items on order_items.item_id=items.id')
-    .where('orders.status != ?', :cancelled)
-    .where('order_items.fulfilled = ?', false)
-    .where('items.user_id = ? AND users.active=?', id, true)
-    .group(:id)
+    .select('users.*')
+    .where('users.active = ?', true)
+    .where.not('id = ?', id)
+    .where.not(email: buyer_emails)
     .pluck('users.email')
   end
+
 end

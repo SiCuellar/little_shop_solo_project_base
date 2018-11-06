@@ -336,7 +336,6 @@ RSpec.describe User, type: :model do
       create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_1)
 
       expect(merchant_1.nonbuyer_emails).to eq([user_3.email, user_4.email])
-
     end
   end
 end
