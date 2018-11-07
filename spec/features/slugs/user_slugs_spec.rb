@@ -11,12 +11,10 @@ describe "user slug" do
     visit user_path(user_1)
 
 
-    expect(current_path).to eq("/users/#{user_1}")
+    expect(current_path).to eq(user_path(user_1))
 
     expect(page).to have_content(user_1.name)
-    expect(page).to have_content(user_1.email)
-    expect(page).to have_content(user_1.address)
-
+  
     expect(page).to_not have_content(user_2.name)
     expect(page).to_not have_content(user_2.email)
     expect(page).to_not have_content(user_2.address)
