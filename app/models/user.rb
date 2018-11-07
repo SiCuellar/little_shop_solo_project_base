@@ -10,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   enum role: %w(user merchant admin)
+  before_save :generate_slug
 
   def merchant_orders(status=nil)
     if status.nil?
@@ -174,6 +175,16 @@ class User < ApplicationRecord
     CSV.generate(headers: true) do |csv|
       csv << attributes.map{ |attr| user.send(attr) }
     end
+  end
+
+  def to_param
+    slug
+  end
+
+  private
+
+  def generate_slug
+    self.slug = name.downcase.delete(" ") + SecureRandom.uuid if name
   end
 
 end

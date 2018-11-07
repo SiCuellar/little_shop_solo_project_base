@@ -3,10 +3,11 @@
 <p><%= link_to "Edit Profile Data", current_admin? ? edit_user_path(@merchant.id) : profile_edit_path %></p>
 <p><%= link_to 'My Items for Sale', current_admin? ? merchant_items_path(@merchant) : dashboard_items_path %>
 
+
 <div id="stats">
   <% if current_user.merchant? %>
   <div id="email-stats">
-    <%= link_to "Download Buyers emails CSV", dashboard_path(format: "csv", data: "customers_emails")%>
+    <%= link_to "Download Buyers emails CSV", dashboard_path(format: "csv", data: "customers_emails")%> <br>
     <%= link_to "Download Non Buyer emails CSV", dashboard_path(format: "csv", data: "noncustomers_emails")%>
   </div>
   <% end  %>
@@ -28,7 +29,7 @@
       <li><%= state %></li>
       <% end %>
       </ul>
-      <% else %>
+      <% else %>=
       <p>(none yet)</p>
       <% end %>
     </div>
