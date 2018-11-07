@@ -4,10 +4,12 @@
 <p><%= link_to 'My Items for Sale', current_admin? ? merchant_items_path(@merchant) : dashboard_items_path %>
 
 <div id="stats">
-
+  <% if current_user.merchant? %>
   <div id="email-stats">
-    
+    <%= link_to "Download Buyers emails CSV", dashboard_path(format: "csv", data: "customers_emails")%>
+    <%= link_to "Download Non Buyer emails CSV", dashboard_path(format: "csv", data: "noncustomers_emails")%>
   </div>
+  <% end  %>
 
   <div id="inv-stats">
     <h3>Inventory Stats</h3>

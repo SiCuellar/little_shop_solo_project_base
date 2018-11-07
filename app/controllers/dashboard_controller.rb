@@ -1,7 +1,6 @@
 class DashboardController < ApplicationController
   def show
     render file: 'errors/not_found', status: 404 unless current_user
-
     if current_user.merchant?
       @merchant = current_user
       @total_items_sold = @merchant.total_items_sold
@@ -14,7 +13,21 @@ class DashboardController < ApplicationController
       @most_active_buyer = @merchant.top_active_user
       @biggest_order = @merchant.biggest_order
       @top_buyers = @merchant.top_buyers(3)
+      buyer_emails = @merchant.buyer_emails
+      nonbuyer_emails = @merchant.nonbuyer_emails
+
+      if params[:data] == 'customers_emails'
+      respond_to do |format|
+          format.csv { send_data buyer_emails.to_csv, filename: "customer_emails.csv"}
+        end
+      elsif params[:data] == 'noncustomers_emails'
+      respond_to do |format|
+          format.csv { send_data nonbuyer_emails.to_csv, filename: "potential_customers.csv"}
+        end
+      else
       render :'merchants/show'
+      end
+
     elsif current_admin?
       @top_3_shipping_states = Order.top_shipping(:state, 3)
       @top_3_shipping_cities = Order.top_shipping(:city, 3)
@@ -23,6 +36,7 @@ class DashboardController < ApplicationController
       @biggest_orders = Order.biggest_orders(3)
     else
       render file: 'errors/not_found', status: 404
+
     end
   end
 end

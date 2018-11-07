@@ -125,7 +125,9 @@ RSpec.describe 'Merchant Stats' do
       end
     end
 
-    xit 'shows buttons to download csv files for buyers/nonbuyers emails' do
+    it 'shows buttons to download csv files for buyers/nonbuyers emails' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)
+
       visit dashboard_path
       within '#stats' do
         within '#email-stats' do
