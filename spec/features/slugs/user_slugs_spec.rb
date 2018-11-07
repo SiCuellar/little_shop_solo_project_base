@@ -11,7 +11,7 @@ describe "user slug" do
     visit user_path(user_1)
 
 
-    expect(current_path).to eq("/users/#{user_1.slug}")
+    expect(current_path).to eq("/users/#{user_1}")
 
     expect(page).to have_content(user_1.name)
     expect(page).to have_content(user_1.email)

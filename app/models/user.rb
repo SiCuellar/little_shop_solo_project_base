@@ -2,6 +2,7 @@ require 'CSV'
 
 class User < ApplicationRecord
   has_secure_password
+  before_save :generate_slug
 
   has_many :orders
   has_many :items
@@ -174,6 +175,16 @@ class User < ApplicationRecord
     CSV.generate(headers: true) do |csv|
       csv << attributes.map{ |attr| user.send(attr) }
     end
+  end
+
+  def to_param
+    slug
+  end
+
+  private
+
+  def generate_slug
+   self.slug = name.parameterize
   end
 
 end

@@ -7,17 +7,12 @@ class UsersController < ApplicationController
   end
 
   def show
-    # respond_to do |format|
-    #   format.html
-    #   format.cvs { send_data @users.to_csv }
-    # end
-
     if request.fullpath == '/profile'
       render file: 'errors/not_found', status: 404 unless current_user
       @user = current_user
     else # '/users/:id
       if current_admin?
-        @user = User.find(params[:id])
+        @user = User.find_by(slug: params[:slug])
         if @user.merchant?
           redirect_to merchant_path(@user.id)
         end
