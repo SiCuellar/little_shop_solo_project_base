@@ -2,7 +2,6 @@ require 'CSV'
 
 class User < ApplicationRecord
   has_secure_password
-  before_save :generate_slug
 
   has_many :orders
   has_many :items
@@ -11,6 +10,7 @@ class User < ApplicationRecord
   validates :email, presence: true, uniqueness: true
 
   enum role: %w(user merchant admin)
+  before_save :generate_slug
 
   def merchant_orders(status=nil)
     if status.nil?
