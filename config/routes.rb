@@ -41,7 +41,6 @@ Rails.application.routes.draw do
   end
 
   namespace :admin do
-    resources :users, only: [:edit, :update], param: :slug
     resources :items, only: [:edit, :update], param: :slug
   end
 

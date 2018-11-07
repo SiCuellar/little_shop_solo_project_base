@@ -55,6 +55,7 @@ RSpec.describe 'User Edit Page, aka Profile Edit' do
 
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(admin)
     end
+    
     it 'should allow admin to edit profile data if email is still unique' do
       visit edit_user_path(@user)
 
