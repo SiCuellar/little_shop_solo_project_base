@@ -12,6 +12,7 @@ class MerchantsController < ApplicationController
 
     @merchant = User.find_by(slug: params[:slug])
     # binding.pry
+
     if current_admin?
       @orders = current_user.merchant_orders
       if @merchant.user?
