@@ -71,6 +71,7 @@ RSpec.describe 'Items Index' do
         click_button("Add to Cart")
 
         visit carts_path
+        # binding.pry
         within "#item-#{item_1.id}" do
           expect(page).to have_content("Merchant: #{item_1.user.name}")
           expect(page).to have_content(item_1.name)

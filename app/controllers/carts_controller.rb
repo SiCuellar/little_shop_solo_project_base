@@ -6,6 +6,7 @@ class CartsController < ApplicationController
   end
 
   def update
+
     item = Item.find(params[:item_id])
     if params[:quantity] == 'more'
       if @cart.count_of(item.id)+1 <= item.inventory

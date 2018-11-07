@@ -22,7 +22,7 @@ class ItemsController < ApplicationController
     render file: 'errors/not_found', status: 404 if current_user.nil?
     @merchant = User.find(params[:merchant_id])
     render file: 'errors/not_found', status: 404 unless current_admin? || current_user == @merchant
-    @item = Item.find(params[:id])
+    @item = Item.find_by(slug: params[:slug])
     @form_url = merchant_item_path(@merchant, @item)
   end
 
@@ -52,7 +52,13 @@ class ItemsController < ApplicationController
     if params[:id]
       item_id = :id
     end
-    @item = Item.find(params[item_id])
+
+    if params[:slug]
+      @item = Item.find_by(slug: params[:slug])
+    else
+      @item = Item.find(params[:item_slug])
+    end
+
     render file: 'errors/not_found', status: 404 unless current_admin? || current_user == @merchant
 
     if request.fullpath.split('/')[-1] == 'disable'

@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "user sees one item" do
+describe "user sees one item(slug)" do
   it "on item show page with item attributes" do
     @merchant = create(:merchant)
 
