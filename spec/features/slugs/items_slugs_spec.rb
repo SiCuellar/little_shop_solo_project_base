@@ -36,10 +36,9 @@ describe "user sees one item(slug)" do
       click_button 'Log in'
 
       visit item_path(item_1)
-      save_and_open_page
       click_link "Edit Item Slug"
 
-      expect(current_path).to eq(edit_admin_item_path(item_1))
+      expect(current_path).to eq(edit_merchant_item_path(item_1))
 
       fill_in :item_slug, with: "existenceispain"
 
