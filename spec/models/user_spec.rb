@@ -318,6 +318,26 @@ RSpec.describe User, type: :model do
       expect(merchant_1.buyer_emails).to eq([user_1.email, user_2.email, user_3.email])
     end
 
+    it 'buyer emails must come form an active user' do
+      user_1 = create(:user, city: 'Denver')
+      user_2 = create(:inactive_user, city: 'Houston')
+      user_3 = create(:inactive_user, city: 'Atlanta')
+      user_4 = create(:inactive_user, city: 'Dallas')
+
+      merchant_1 = create(:merchant)
+
+      item_1 = create(:item, user: merchant_1)
+
+      order_1 = create(:completed_order, user: user_1)
+      create(:fulfilled_order_item, quantity: 100, price: 10, order: order_1, item: item_1)
+      order_2 = create(:completed_order, user: user_2)
+      create(:fulfilled_order_item, quantity: 1000, price: 10, order: order_2, item: item_1)
+      order_3 = create(:completed_order, user: user_3)
+      create(:fulfilled_order_item, quantity: 10, price: 10, order: order_3, item: item_1)
+
+      expect(merchant_1.buyer_emails).to eq([user_1.email])
+    end
+
     it '.nonbuyer_emails' do
       user_1 = create(:user, city: 'Denver')
       user_2 = create(:user, city: 'Houston')
@@ -338,5 +358,7 @@ RSpec.describe User, type: :model do
 
       expect(merchant_1.nonbuyer_emails).to eq([user_3.email, user_4.email])
     end
+
+
   end
 end
