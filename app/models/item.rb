@@ -32,6 +32,6 @@ class Item < ApplicationRecord
   private
 
   def generate_slug
-   self.slug = name.parameterize
+    self.slug = name.downcase.delete(" ") + SecureRandom.uuid if name
   end
 end

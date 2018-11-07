@@ -71,7 +71,7 @@ RSpec.describe 'Admin-only merchant management' do
   describe 'redirects admin users to a proper page' do
     scenario 'when a user path is really a merchant' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@admin)
-      # binding.pry
+      # binding.pry`
       visit user_path(@active_merchant)
       expect(current_path).to eq(merchant_path(@active_merchant))
     end

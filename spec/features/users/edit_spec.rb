@@ -22,7 +22,7 @@ RSpec.describe 'User Edit Page, aka Profile Edit' do
       fill_in :user_email, with: new_email
       click_button 'Update User'
 
-      expect(current_path).to eq(user_path(@user))
+      expect(current_path).to eq(profile_path)
       within '.profile-data' do
         expect(page).to have_content(new_email)
       end

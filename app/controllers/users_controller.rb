@@ -33,6 +33,7 @@ class UsersController < ApplicationController
       @user = current_user
       if current_admin? && params[:slug]
         @user = User.find_by(slug: params[:slug])
+        # binding.pry
       elsif current_user && params[:slug] && current_user.slug != params[:slug]
         render file: 'errors/not_found', status: 404
       end
