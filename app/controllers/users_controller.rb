@@ -30,9 +30,9 @@ class UsersController < ApplicationController
     render file: 'errors/not_found', status: 404 if current_user.nil?
     if current_user
       @user = current_user
-      if current_admin? && params[:id]
-        @user = User.find(params[:id])
-      elsif current_user && params[:id] && current_user.id != params[:id]
+      if current_admin? && params[:slug]
+        @user = User.find_by(slug: params[:slug])
+      elsif current_user && params[:slug] && current_user.slug != params[:slug]
         render file: 'errors/not_found', status: 404
       end
     end
@@ -40,9 +40,9 @@ class UsersController < ApplicationController
 
   def update
     render file: 'errors/not_found', status: 404 if current_user.nil?
-    if current_user && params[:id]
-      if current_admin? || (current_user.id == params[:id].to_i)
-        @user = User.find(params[:id])
+    if current_user && params[:slug]
+      if current_admin? || (current_user.slug == params[:slug].to_i)
+        @user = User.find_by(slug: params[:slug])
 
         if current_admin? && params[:toggle]
           if params[:toggle] == 'enable'
