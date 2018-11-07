@@ -4,14 +4,22 @@
 <p><%= link_to 'My Items for Sale', current_admin? ? merchant_items_path(@merchant) : dashboard_items_path %>
 
 <div id="stats">
+  <% if current_user.merchant? %>
+  <div id="email-stats">
+    <%= link_to "Download Buyers emails CSV", dashboard_path(format: "csv", data: "customers_emails")%>
+    <%= link_to "Download Non Buyer emails CSV", dashboard_path(format: "csv", data: "noncustomers_emails")%>
+  </div>
+  <% end  %>
+
   <div id="inv-stats">
     <h3>Inventory Stats</h3>
     <p>Total Items Sold: <%= number_with_delimiter(@total_items_sold) %></p>
     <p>Represents <%= number_to_percentage(@total_items_pcnt, precision: 1) %> of Inventory</p>
   </div>
+
   <div id="shipping-stats">
     <h3>Shipping Stats</h3>
-    
+
     <div id='stats-top-states'>
     <p>Top 3 States:</p>
       <% if @top_3_shipping_states %>
@@ -24,7 +32,7 @@
       <p>(none yet)</p>
       <% end %>
     </div>
-    
+
     <div id='stats-top-cities'>
     <p>Top 3 Cities:</p>
       <% if @top_3_shipping_cities %>
@@ -88,5 +96,5 @@
   <% else %>
   <%= button_to "Enable", user_path(@merchant), method: :patch, params: { toggle: :enable } %>
   <% end %>
-  <%= button_to "Upgrade to Merchant", user_path(@merchant), method: :patch, params: { toggle: :role } %> 
+  <%= button_to "Upgrade to Merchant", user_path(@merchant), method: :patch, params: { toggle: :role } %>
 <% end %>

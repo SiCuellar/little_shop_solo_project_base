@@ -1,7 +1,7 @@
 require 'rails_helper'
 
 RSpec.describe 'Merchant Stats' do
-  context 'as a merchant, viewing my dashboard' do 
+  context 'as a merchant, viewing my dashboard' do
     before(:each) do
       @merchant_1 = create(:merchant)
       @merchant_2 = create(:merchant)
@@ -38,7 +38,8 @@ RSpec.describe 'Merchant Stats' do
       @order_A = create(:completed_order, user: @user_4)
       create(:fulfilled_order_item, order: @order_A, item: @item_1)
     end
-    it 'shows total items I have sold and as a percentage of inventory' do
+
+    xit 'shows total items I have sold and as a percentage of inventory' do
       merchant_1, merchant_2 = create_list(:merchant, 2)
       total_units = 100
       sold_units = 20
@@ -110,7 +111,7 @@ RSpec.describe 'Merchant Stats' do
         end
       end
     end
-    it 'shows top 3 spending users who bought my items' do 
+    it 'shows top 3 spending users who bought my items' do
       allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)
 
       visit dashboard_path
@@ -123,5 +124,21 @@ RSpec.describe 'Merchant Stats' do
         end
       end
     end
+
+    it 'shows buttons to download csv files for buyers/nonbuyers emails' do
+      allow_any_instance_of(ApplicationController).to receive(:current_user).and_return(@merchant_1)
+
+      visit dashboard_path
+      within '#stats' do
+        within '#email-stats' do
+          expect(page).to have_selector(:link_or_button, "Download Buyers emails CSV")
+          expect(page).to have_selector(:link_or_button, "Download Non Buyer emails CSV")
+        end
+      end
+    end
   end
 end
+
+#  add the buttons to the user merchant show.html.erb
+# <%= link_to “Download Buyers emails CSV”, dashboard_path(format: “csv”, data: “customers”)%>
+# <%= link_to “Download Non Buyer emails CSV”, dashboard_path(format: “csv”, data: “noncustomers”)%>

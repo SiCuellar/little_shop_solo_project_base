@@ -1,3 +1,5 @@
+require 'CSV'
+
 class UsersController < ApplicationController
   def index
     render file: 'errors/not_found', status: 404 unless current_admin?
@@ -5,6 +7,11 @@ class UsersController < ApplicationController
   end
 
   def show
+    # respond_to do |format|
+    #   format.html
+    #   format.cvs { send_data @users.to_csv }
+    # end
+
     if request.fullpath == '/profile'
       render file: 'errors/not_found', status: 404 unless current_user
       @user = current_user
