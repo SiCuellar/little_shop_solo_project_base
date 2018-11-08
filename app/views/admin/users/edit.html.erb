@@ -1,0 +1,8 @@
+<h1> Edit User's slugs </h1>
+<%= form_for [:admin, @user] do |f| %>
+
+        <%= f.label :slug %>:
+        <%= f.text_field :slug %> <br>
+
+        <%= f.submit %> <br>
+<% end %>
