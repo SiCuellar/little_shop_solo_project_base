@@ -10,11 +10,12 @@ class MerchantsController < ApplicationController
   def show
     render file: 'errors/not_found', status: 404 unless current_user
 
-    @merchant = User.find_by(slug: params[:slug])
     # binding.pry
+    @merchant = User.find_by(slug: params[:slug])
 
     if current_admin?
-      @orders = current_user.merchant_orders
+      @orders = @merchant.merchant_orders
+
       if @merchant.user?
         redirect_to user_path(@merchant)
       end
