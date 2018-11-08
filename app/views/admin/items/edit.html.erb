@@ -1,0 +1,8 @@
+<h1> Edit Item's slugs </h1>
+<%= form_for [:admin, @item] do |f| %>
+
+        <%= f.label :slug %>:
+        <%= f.text_field :slug %> <br>
+
+        <%= f.submit %> <br>
+<% end %>

@@ -3,7 +3,7 @@
   <%= @item.name %>
 </p>
 <% if current_admin?  %>
-<%= link_to 'Edit Item Slug', edit_merchant_item_path(@item) %>
+<%= link_to 'Edit Item Slug', edit_admin_item_path(@item) %>
 <% end %>
 
 

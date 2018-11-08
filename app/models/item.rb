@@ -1,5 +1,5 @@
 class Item < ApplicationRecord
-  before_save :generate_slug
+  before_create :generate_slug
 
   belongs_to :user
   has_many :order_items

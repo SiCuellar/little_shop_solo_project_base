@@ -20,10 +20,11 @@ class ItemsController < ApplicationController
 
   def edit
     render file: 'errors/not_found', status: 404 if current_user.nil?
-    @merchant = User.find_by(slug: params[:merchant_slug])
+    # @merchant = User.find_by(slug: params[:merchant_slug])
     render file: 'errors/not_found', status: 404 unless current_admin? || current_user == @merchant
     @item = Item.find_by(slug: params[:slug])
-    @form_url = merchant_item_path(@merchant, @item)
+    # binding.pry
+    @form_url = edit_admin_item_path(@item)
   end
 
   def create
